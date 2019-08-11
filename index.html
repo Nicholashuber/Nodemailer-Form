@@ -7,21 +7,22 @@
       $(document).ready(function(){
         $("#submit").click(function(e) {
           e.preventDefault();
+          
           var name = $("#name").val();
           var phone = $("#phone").val();
 
-        $.ajax({type: "POST", url: 'https://exampleawsapigateway.execute-api.us-east-2.amazonaws.com/Prod', contentType: 'application/json', data: JSON.stringify({
-                        'name': name,
-                        'phone': phone
-                    }), success: function(result){
-            $('#form-response').text('Email was sent.');
-        },
-        error: function(){
-          $('#form-response').text('Error.');
-        }
-});
+            $.ajax({type: "POST", url: 'https://exampleawsapigateway.execute-api.us-east-2.amazonaws.com/Prod', contentType: 'application/json', data: JSON.stringify({
+                            'name': name,
+                            'phone': phone
+                        }), success: function(result){
+                $('#form-response').text('Email was sent.');
+            },
+            error: function(){
+              $('#form-response').text('Error.');
+            }
+            });
+        });
     });
-});
     </script>
        
 </head>
